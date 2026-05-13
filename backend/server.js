@@ -45,7 +45,15 @@ const STORY_FILE_UPLOAD = multer({
 });
 
 app.use(cors({ origin: FRONTEND_ORIGIN, credentials: true }));
-app.use(express.json({ limit: "6mb" }));
+const jsonParser = express.json({ limit: "6mb" });
+
+app.use((req, res, next) => {
+  if (req.path.startsWith("/api/admin/")) {
+    return next();
+  }
+
+  return jsonParser(req, res, next);
+});
 app.use("/uploads", express.static(UPLOADS_DIR));
 
 function nowIso() {
