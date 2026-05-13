@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "npm run dev -w frontend",
-    "build": "npm run build -w frontend && node scripts/sync-frontend-dist.mjs",
+    "build": "npm run build -w frontend",
     "postinstall": "npm run build",
     "start": "node server.js",
     "lint": "npm run lint -w frontend",

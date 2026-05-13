@@ -584,12 +584,8 @@ function initializeFreeBoardDailyReset() {
 ensureStoreFile();
 initializeFreeBoardDailyReset();
 
-app.get("/", (req, res) => {
-  res.json({
-    service: "homepage-backend",
-    status: "ok",
-    date: new Date().toISOString(),
-  });
+app.get("/favicon.ico", (req, res) => {
+  res.redirect(302, "/icon.svg");
 });
 
 app.get("/api/health", (req, res) => {
