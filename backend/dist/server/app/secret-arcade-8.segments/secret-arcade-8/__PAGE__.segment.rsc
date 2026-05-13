@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[55367,["/_next/static/chunks/0iwz~d34oj_si.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/12flz-lm62gu~.js","/_next/static/chunks/00-qpadzzc79k.js"],"MainLayout"]
+3:I[47929,["/_next/static/chunks/0iwz~d34oj_si.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/12flz-lm62gu~.js","/_next/static/chunks/00-qpadzzc79k.js"],"TetrisGame"]
+4:I[97367,["/_next/static/chunks/0iwz~d34oj_si.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"children":["$","div",null,{"className":"p-8","children":["$","div",null,{"className":"mx-auto max-w-6xl space-y-6","children":[["$","div",null,{"children":[["$","p",null,{"className":"text-sm text-muted-foreground","children":"숨겨진 페이지"}],["$","h1",null,{"className":"mt-1 text-3xl font-bold text-foreground","children":"비밀 아케이드"}],["$","p",null,{"className":"mt-2 text-muted-foreground","children":"찾아낸 사람만 플레이할 수 있는 테트리스 공간입니다."}]]}],["$","$L3",null,{}]]}]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/12flz-lm62gu~.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/00-qpadzzc79k.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"f_iHR1KDEpq33bFmJHBEF"}
+6:null

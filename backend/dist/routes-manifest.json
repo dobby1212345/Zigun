@@ -1,0 +1,158 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/long-stories/[subcategoryId]",
+      "regex": "^/long\\-stories/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPsubcategoryId": "nxtPsubcategoryId"
+      },
+      "namedRegex": "^/long\\-stories/(?<nxtPsubcategoryId>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/short-stories/[subcategoryId]",
+      "regex": "^/short\\-stories/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPsubcategoryId": "nxtPsubcategoryId"
+      },
+      "namedRegex": "^/short\\-stories/(?<nxtPsubcategoryId>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/board",
+      "regex": "^/admin/board(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/board(?:/)?$"
+    },
+    {
+      "page": "/admin/dashboard",
+      "regex": "^/admin/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/dashboard(?:/)?$"
+    },
+    {
+      "page": "/admin/easter",
+      "regex": "^/admin/easter(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/easter(?:/)?$"
+    },
+    {
+      "page": "/api/admin/free-board/clear",
+      "regex": "^/api/admin/free\\-board/clear(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/free\\-board/clear(?:/)?$"
+    },
+    {
+      "page": "/api/admin/login",
+      "regex": "^/api/admin/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/login(?:/)?$"
+    },
+    {
+      "page": "/api/admin/logout",
+      "regex": "^/api/admin/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/logout(?:/)?$"
+    },
+    {
+      "page": "/api/admin/status",
+      "regex": "^/api/admin/status(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/status(?:/)?$"
+    },
+    {
+      "page": "/free-board",
+      "regex": "^/free\\-board(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/free\\-board(?:/)?$"
+    },
+    {
+      "page": "/long-stories",
+      "regex": "^/long\\-stories(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/long\\-stories(?:/)?$"
+    },
+    {
+      "page": "/secret-arcade-8",
+      "regex": "^/secret\\-arcade\\-8(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/secret\\-arcade\\-8(?:/)?$"
+    },
+    {
+      "page": "/short-stories",
+      "regex": "^/short\\-stories(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/short\\-stories(?:/)?$"
+    },
+    {
+      "page": "/synopsis",
+      "regex": "^/synopsis(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/synopsis(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

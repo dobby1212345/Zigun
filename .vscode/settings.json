@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^\\$conn = Get-NetTCPConnection -LocalPort 4000 -State Listen -ErrorAction SilentlyContinue; if \\(\\$conn\\) \\{ \\$pid = \\$conn\\.OwningProcess; Write-Host \"PID:\" \\$pid; Get-CimInstance Win32_Process -Filter \"ProcessId = \\$pid\" \\| Select-Object ProcessId, Name, CommandLine \\| Format-List \\| Out-String \\} else \\{ Write-Host \"No process listening on 4000\" \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

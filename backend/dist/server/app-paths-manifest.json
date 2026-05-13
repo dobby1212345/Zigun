@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/board/page": "app/admin/board/page.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/easter/page": "app/admin/easter/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/api/admin/free-board/clear/route": "app/api/admin/free-board/clear/route.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js",
+  "/api/admin/logout/route": "app/api/admin/logout/route.js",
+  "/api/admin/status/route": "app/api/admin/status/route.js",
+  "/free-board/page": "app/free-board/page.js",
+  "/long-stories/[subcategoryId]/page": "app/long-stories/[subcategoryId]/page.js",
+  "/long-stories/page": "app/long-stories/page.js",
+  "/page": "app/page.js",
+  "/secret-arcade-8/page": "app/secret-arcade-8/page.js",
+  "/short-stories/[subcategoryId]/page": "app/short-stories/[subcategoryId]/page.js",
+  "/short-stories/page": "app/short-stories/page.js",
+  "/synopsis/page": "app/synopsis/page.js"
+}

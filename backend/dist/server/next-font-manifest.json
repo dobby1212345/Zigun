@@ -1,0 +1,46 @@
+{
+  "app": {
+    "[project]/frontend/app/_not-found/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/admin/board/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/admin/dashboard/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/admin/easter/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/admin/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/free-board/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/long-stories/[subcategoryId]/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/long-stories/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/secret-arcade-8/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/short-stories/[subcategoryId]/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/short-stories/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ],
+    "[project]/frontend/app/synopsis/page": [
+      "static/media/fca78c2ee6cec166-s.p.0kizb7t94.kuf.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

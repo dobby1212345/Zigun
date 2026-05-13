@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/KUMA_LAB/Downloads/20269192_homepage/frontend/app/api/admin/status/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\"\r\n\r\nexport async function GET(request: Request) {\r\n  const cookie = request.headers.get(\"cookie\") || \"\"\r\n  const isAdmin = cookie.includes(\"admin_session=authenticated\")\r\n  return NextResponse.json({ isAdmin })\r\n}\r\n"],"names":["GET","request","cookie","headers","get","isAdmin","includes","json"],"mappings":";;;;AAAA;;AAEO,eAAeA,IAAIC,OAAgB;IACxC,MAAMC,SAASD,QAAQE,OAAO,CAACC,GAAG,CAAC,aAAa;IAChD,MAAMC,UAAUH,OAAOI,QAAQ,CAAC;IAChC,OAAO,gJAAY,CAACC,IAAI,CAAC;QAAEF;IAAQ;AACrC"}}]
+}

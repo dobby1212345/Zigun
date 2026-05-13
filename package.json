@@ -1,0 +1,19 @@
+{
+  "name": "homepage-monorepo",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w frontend",
+    "build": "npm run build -w frontend && node scripts/sync-frontend-dist.mjs",
+    "postinstall": "npm run build",
+    "start": "node server.js",
+    "lint": "npm run lint -w frontend",
+    "backend": "node server.js"
+  }
+}

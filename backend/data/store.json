@@ -1,0 +1,55 @@
+{
+  "profile": {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "writer_name": "김영건",
+    "profile_text": "습작 올리는 장소",
+    "profile_image_url": null,
+    "created_at": "2026-04-15T00:56:44.187Z",
+    "updated_at": "2026-04-29T00:11:00.260Z"
+  },
+  "subcategories": [
+    {
+      "id": "2e829038-ee1f-4954-abee-46d907226363",
+      "name": "작품 제목",
+      "parent_category": "short",
+      "sort_order": 0,
+      "created_at": "2026-04-15T00:58:25.066Z"
+    }
+  ],
+  "stories": [
+    {
+      "id": "72d60f75-9c7b-40a2-b818-906c955d0199",
+      "title": "예시 1",
+      "content": "ㅇㅇㅇㅇㅇ",
+      "category": "short_story",
+      "subcategory_id": "2e829038-ee1f-4954-abee-46d907226363",
+      "thumbnail_url": null,
+      "cover_image_url": null,
+      "images": [],
+      "is_published": true,
+      "created_at": "2026-04-16T01:11:15.709Z",
+      "updated_at": "2026-04-16T01:11:15.709Z"
+    },
+    {
+      "id": "258e23a3-0866-430f-95ce-b6c4637c758b",
+      "title": "예시 2",
+      "content": "ㅇㅇ",
+      "category": "short_story",
+      "subcategory_id": "2e829038-ee1f-4954-abee-46d907226363",
+      "thumbnail_url": null,
+      "cover_image_url": null,
+      "images": [],
+      "is_published": true,
+      "created_at": "2026-04-16T01:11:40.331Z",
+      "updated_at": "2026-04-16T01:11:40.331Z"
+    }
+  ],
+  "comments": [],
+  "free_board_messages": [],
+  "free_board_bans": [],
+  "free_board_meta": {
+    "last_daily_reset_key": "2026-05-06",
+    "last_cleared_at": "2026-05-06T01:59:20.416Z",
+    "last_cleared_reason": "daily-9am-kst"
+  }
+}

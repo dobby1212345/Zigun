@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/board/page": "/admin/board",
+  "/admin/dashboard/page": "/admin/dashboard",
+  "/admin/easter/page": "/admin/easter",
+  "/admin/page": "/admin",
+  "/api/admin/free-board/clear/route": "/api/admin/free-board/clear",
+  "/api/admin/login/route": "/api/admin/login",
+  "/api/admin/logout/route": "/api/admin/logout",
+  "/api/admin/status/route": "/api/admin/status",
+  "/free-board/page": "/free-board",
+  "/long-stories/[subcategoryId]/page": "/long-stories/[subcategoryId]",
+  "/long-stories/page": "/long-stories",
+  "/page": "/",
+  "/secret-arcade-8/page": "/secret-arcade-8",
+  "/short-stories/[subcategoryId]/page": "/short-stories/[subcategoryId]",
+  "/short-stories/page": "/short-stories",
+  "/synopsis/page": "/synopsis"
+}
