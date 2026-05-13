@@ -79,6 +79,16 @@ export function FreeBoardRoom({ initialMessages, isAdmin }: FreeBoardRoomProps) 
     return new Map(activeBans.map((ban) => [ban.client_id, ban]))
   }, [activeBans])
 
+  const appendMessage = useCallback((incoming: FreeBoardMessage) => {
+    setMessages((prev) => {
+      if (prev.some((message) => message.id === incoming.id)) {
+        return prev
+      }
+
+      return [...prev, incoming]
+    })
+  }, [])
+
   const refreshMessages = useCallback(async () => {
     if (!isAdmin && !hasEntered) {
       return
@@ -122,14 +132,61 @@ export function FreeBoardRoom({ initialMessages, isAdmin }: FreeBoardRoomProps) 
       return
     }
 
-    const interval = setInterval(() => {
-      void refreshMessages()
-    }, 5000)
+    let source: EventSource | null = null
+    let fallbackInterval: ReturnType<typeof setInterval> | null = null
+    let isActive = true
+
+    const startFallbackPolling = () => {
+      if (fallbackInterval) {
+        return
+      }
+
+      fallbackInterval = setInterval(() => {
+        void refreshMessages()
+      }, 5000)
+    }
+
+    try {
+      source = new EventSource("/api/free-board/stream")
+
+      source.addEventListener("message", (event) => {
+        if (!isActive) {
+          return
+        }
+
+        try {
+          const parsed = JSON.parse(event.data) as FreeBoardMessage
+          appendMessage(parsed)
+        } catch {
+          // Ignore malformed stream data.
+        }
+      })
+
+      source.onerror = () => {
+        if (!isActive) {
+          return
+        }
+
+        source?.close()
+        source = null
+        startFallbackPolling()
+      }
+    } catch {
+      startFallbackPolling()
+    }
 
     return () => {
-      clearInterval(interval)
+      isActive = false
+
+      if (source) {
+        source.close()
+      }
+
+      if (fallbackInterval) {
+        clearInterval(fallbackInterval)
+      }
     }
-  }, [refreshMessages, isAdmin, hasEntered])
+  }, [appendMessage, refreshMessages, isAdmin, hasEntered])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -184,7 +241,7 @@ export function FreeBoardRoom({ initialMessages, isAdmin }: FreeBoardRoomProps) 
         asAdmin: isAdmin,
       })
 
-      setMessages((prev) => [...prev, created])
+      appendMessage(created)
       setContent("")
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : "메시지 등록에 실패했습니다.")
@@ -429,7 +486,9 @@ export function FreeBoardRoom({ initialMessages, isAdmin }: FreeBoardRoomProps) 
           {errorMessage && (
             <p className="text-sm text-destructive">{errorMessage}</p>
           )}
-          <p className="text-xs text-muted-foreground">5초마다 자동으로 새 메시지를 확인합니다.</p>
+          <p className="text-xs text-muted-foreground">
+            새 메시지는 실시간으로 표시되며, 연결이 끊기면 5초마다 다시 확인합니다.
+          </p>
         </form>
       </CardContent>
     </Card>

@@ -44,6 +44,24 @@ const STORY_FILE_UPLOAD = multer({
   },
 });
 
+const freeBoardStreams = new Set();
+
+function sendSseEvent(response, event, payload) {
+  response.write(`event: ${event}\n`);
+  response.write(`data: ${JSON.stringify(payload)}\n\n`);
+}
+
+function broadcastFreeBoardMessage(message) {
+  for (const client of freeBoardStreams) {
+    try {
+      sendSseEvent(client.response, "message", message);
+    } catch {
+      clearInterval(client.keepAliveTimer);
+      freeBoardStreams.delete(client);
+    }
+  }
+}
+
 app.use(cors({ origin: FRONTEND_ORIGIN, credentials: true }));
 const jsonParser = express.json({ limit: "6mb" });
 
@@ -1057,6 +1075,31 @@ app.get("/api/free-board/messages", (req, res) => {
   res.status(200).json(messages);
 });
 
+app.get("/api/free-board/stream", (req, res) => {
+  res.status(200);
+  res.setHeader("Content-Type", "text/event-stream");
+  res.setHeader("Cache-Control", "no-cache");
+  res.setHeader("Connection", "keep-alive");
+
+  if (typeof res.flushHeaders === "function") {
+    res.flushHeaders();
+  }
+
+  res.write(": connected\n\n");
+
+  const keepAliveTimer = setInterval(() => {
+    res.write(": keep-alive\n\n");
+  }, 20000);
+
+  const client = { response: res, keepAliveTimer };
+  freeBoardStreams.add(client);
+
+  req.on("close", () => {
+    clearInterval(keepAliveTimer);
+    freeBoardStreams.delete(client);
+  });
+});
+
 app.post("/api/free-board/messages", (req, res) => {
   const clientId = parseNullableString(req.body.client_id);
   const content = parseNullableString(req.body.content);
@@ -1111,6 +1154,8 @@ app.post("/api/free-board/messages", (req, res) => {
 
   store.free_board_messages.push(message);
   writeStore(store);
+
+  broadcastFreeBoardMessage(message);
 
   res.status(201).json(message);
 });
